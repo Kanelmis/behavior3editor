@@ -1,6 +1,6 @@
 b3e.project.NodeManager = function(editor, project) {
   "use strict";
-
+  
   /**
    * Register a node to the node list. You can provide:
    * 
@@ -16,6 +16,7 @@ b3e.project.NodeManager = function(editor, project) {
     }
 
     if (!(node instanceof b3e.Node)) {
+      
       var n         = new b3e.Node(isDefault);
       n.name        = node.name;
       n.category    = node.category;
@@ -117,7 +118,7 @@ b3e.project.NodeManager = function(editor, project) {
    */
   this.remove = function(node) {
     project.history._beginBatch();
-
+    
     var name = node.name||node;
     delete project._nodes[name];
 
@@ -130,6 +131,7 @@ b3e.project.NodeManager = function(editor, project) {
       }
     });
 
+
     var _old = [this, this.add, [node]];
     var _new = [this, this.remove, [node]];
     project.history._add(new b3e.Command(_old, _new));
@@ -139,14 +141,17 @@ b3e.project.NodeManager = function(editor, project) {
     editor.trigger('noderemoved', node);
   };
 
+
+  
   /**
    * Iterates over node list.
    */
-  this.each = function(callback, thisarg) {
+   this.each = function(callback, thisarg) {
     Object.keys(project._nodes).forEach(function(key) {
       callback.call(thisarg, project._nodes[key]);
     });
   };
+
 
   this._applySettings = function(settings) {};
 };
