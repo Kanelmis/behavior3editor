@@ -121,14 +121,14 @@
     var text = new createjs.Text(
         block.getTitle(),
         '18px Arial',
-        '#FF0000'
+        '#333333'
     );
     text.textAlign = 'center';
 
     var bounds = text.getBounds();
     text.regY = bounds.height/2;
-    text.x = -block._width/2;
-    text.y = -block._height/2;
+   // text.x = -block._width/2;
+    //text.y = -block._height/2;
 
     return text;
   };
@@ -138,11 +138,11 @@
     'Root'        : b3e.draw.rootSymbol,
     /*
     'Sequence'    : b3e.draw.sequenceSymbol, 
-    */
+    
     'Priority'    : b3e.draw.prioritySymbol,
     'MemSequence' : b3e.draw.memsequenceSymbol,
     'MemPriority' : b3e.draw.memprioritySymbol, 
-  
+    */
   };
 
 }());

@@ -17,7 +17,7 @@
     this.id          = b3.createUUID();
     this.node        = node;
     this.name        = dict.name;
-    this.title       = "0" + dict.title || this.name;
+    this.title       = " [0] " + (dict.title || this.name);
     this.category    = dict.category;
     this.description = dict.description || '';
     this.properties  = tine.merge({}, dict.properties);
