@@ -135,7 +135,8 @@ b3e.editor.DragSystem = function(editor) {
         var nodes = [];
         for (var i=0; i<conns.length; i++) {
           nodes.push(conns[i]._outBlock.id);
-          conns[i]._outBlock.title = "(" + i + ")"  + " " + conns[i]._outBlock.name;
+          var title = conns[i]._outBlock.title.replace(/\d | \s\s+/, "")
+          conns[i]._outBlock.title =  i + " " + title;
           conns[i]._outBlock._redraw();
         }
     

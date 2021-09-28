@@ -27,7 +27,7 @@
     background_color        : '#171717',
     selection_color         : '#4BB2FD',
     block_border_color      : '#6D6D6D',
-    block_symbol_color      : '#333333',
+    block_symbol_color      : '#FF0000',
     anchor_background_color : '#EFEFEF',
 
     connection_color        : '#6D6D6D',
