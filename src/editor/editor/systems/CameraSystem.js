@@ -36,6 +36,38 @@ b3e.editor.CameraSystem = function(editor) {
         tree.y -= delta;
       }
     }
+    
+    //get node from project 
+    tree.blocks.each(function(block) {
+      
+      getBlockChildrenIds(block);
+
+
+      function getBlockChildrenIds(block) {
+        var conns = block._outConnections.slice(0);
+        if (editor._settings.get('layout') === 'horizontal') {
+          conns.sort(function(a, b) {
+            return a._outBlock.y - 
+                   b._outBlock.y;
+          });
+        } else {
+          conns.sort(function(a, b) {
+            return a._outBlock.x - 
+                   b._outBlock.x;
+          });
+        }
+    
+        var nodes = [];
+        for (var i=0; i<conns.length; i++) {
+          nodes.push(conns[i]._outBlock.id);
+          var title = conns[i]._outBlock.title.replace(/\[.*?\]/ , "[" + i + "]");
+          conns[i]._outBlock.title =title;
+          conns[i]._outBlock._redraw();
+        }
+    
+        return nodes;
+      }
+    });
   };
 
   this.onMouseDown = function(e) {
