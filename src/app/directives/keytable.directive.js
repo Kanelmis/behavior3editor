@@ -67,8 +67,34 @@
       vm.rows.push({key:key, value:JSON.stringify(value), fixed:fixed===true});
     }
 
-    function remove(i) {
-      vm.rows.splice(i, 1);
+    function remove(j) { 
+      vm.rows.splice(j,1);
+      //update the scene
+      for (var key in vm.model){
+        if (vm.model.hasOwnProperty(key)){
+          delete vm.model[key];
+        }
+      }
+        if ( vm.rows.length == 0){
+        vm._onChange($scope);
+        }
+        for (var i=0; i<vm.rows.length; i++) {
+          var r = vm.rows[i];
+          var value = r.value;
+          try {
+            value = JSON.parse(value);
+          } catch (e) {
+            // keep value as string
+          }
+  
+          vm.model[r.key] = value;
+          
+          
+          vm._onChange($scope);
+          
+        }
+      
+      
     }
 
     function change() {
