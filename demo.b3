@@ -1,0 +1,59 @@
+{
+  "name": "demo",
+  "description": "",
+  "data": {
+    "version": "0.3.0",
+    "scope": "project",
+    "selectedTree": "c6fa6363-cb96-4b1d-add3-92e713458e1d",
+    "trees": [
+      {
+        "version": "0.3.0",
+        "scope": "tree",
+        "id": "c6fa6363-cb96-4b1d-add3-92e713458e1d",
+        "title": " [0] A behavior tree",
+        "description": "",
+        "root": "e4d66181-26bf-4954-83b8-3c7ec4086147",
+        "properties": {},
+        "nodes": {
+          "e4d66181-26bf-4954-83b8-3c7ec4086147": {
+            "id": "e4d66181-26bf-4954-83b8-3c7ec4086147",
+            "name": "Sequence",
+            "category": "composite",
+            "title": " [0-6147]  Sequence",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 36,
+              "y": -204
+            },
+            "children": [
+              "595a765e-652d-4eef-8a67-490c8fea3914"
+            ]
+          },
+          "be01c0c5-f245-4f16-b60f-1617760915e8": {
+            "id": "be01c0c5-f245-4f16-b60f-1617760915e8",
+            "name": "Sequence",
+            "category": "composite",
+            "title": " [0-15e8]  Sequence",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 144,
+              "y": -84
+            },
+            "children": []
+          }
+        },
+        "display": {
+          "camera_x": 492,
+          "camera_y": 380.5,
+          "camera_z": 1,
+          "x": -192,
+          "y": -48
+        }
+      }
+    ],
+    "custom_nodes": []
+  },
+  "path": "C:\\behavior3editor\\demo.b3"
+}

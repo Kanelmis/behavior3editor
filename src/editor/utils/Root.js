@@ -6,3 +6,9 @@ b3e.Root = {
   category : 'root',
   title    : 'A behavior tree'
 };
+
+b3e.Cat = {
+  name : 'Label' ,
+  category : 'special',
+  title: 'Labels',
+};

@@ -41,6 +41,7 @@
     this.nodes.add(b3.Runner, true);
     this.nodes.add(b3.Error, true);
     this.nodes.add(b3.Wait, true);
+    this.nodes.add(b3e.Cat, true);
 
     this._applySettings(this._editor._settings);
     this.history.clear();

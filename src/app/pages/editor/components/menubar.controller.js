@@ -52,6 +52,7 @@
     _activate();
     $scope.$on('$destroy', _destroy);
 
+   
     function _activate() {
     }
 
@@ -259,5 +260,6 @@
       tree.selection.invertSelection();
       return false;
     }
+
   }
 })();

@@ -1,0 +1,44 @@
+{
+  "name": "testFun",
+  "description": "",
+  "data": {
+    "version": "0.3.0",
+    "scope": "project",
+    "selectedTree": "20ed3bd5-eae0-4c4a-954a-3e6d4ee7fe65",
+    "trees": [
+      {
+        "version": "0.3.0",
+        "scope": "tree",
+        "id": "20ed3bd5-eae0-4c4a-954a-3e6d4ee7fe65",
+        "title": " [0] A behavior tree",
+        "description": "",
+        "root": "adc46786-871c-4948-8413-174dd5cf3566",
+        "properties": {},
+        "nodes": {
+          "adc46786-871c-4948-8413-174dd5cf3566": {
+            "id": "adc46786-871c-4948-8413-174dd5cf3566",
+            "name": "Sequence",
+            "category": "composite",
+            "title": " [0] Sequence",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 132,
+              "y": -48
+            },
+            "children": []
+          }
+        },
+        "display": {
+          "camera_x": 492,
+          "camera_y": 380.5,
+          "camera_z": 1,
+          "x": -84,
+          "y": -24
+        }
+      }
+    ],
+    "custom_nodes": []
+  },
+  "path": "C:\\behavior3editor\\testfun.b3"
+}

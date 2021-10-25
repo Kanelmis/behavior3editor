@@ -37,6 +37,7 @@
     tree_color              : '#FFFFFF',
     action_color            : '#FFFFFF',
     condition_color         : '#FFFFFF',
+    special_color           : '#FFFFFF',
 
     // CONNECTION
     connection_width       : 2,
@@ -61,6 +62,8 @@
     block_action_height    : 40,
     block_condition_width  : 160,
     block_condition_height : 40,
+    block_special_width : 160,
+    block_special_height: 40,
   };
 
   b3e.DEFAULT_SETTINGS = DEFAULT_SETTINGS;

@@ -17,7 +17,10 @@
     this.id          = b3.createUUID();
     this.node        = node;
     this.name        = dict.name;
-    this.title       = " [0] " + (dict.title || this.name);
+    this.title       = " [0-" + this.id.slice(this.id.length-4) + "]  " + (dict.title || this.name);
+    if (dict.category == "special"){
+      this.title = "Labels";
+    }
     this.category    = dict.category;
     this.description = dict.description || '';
     this.properties  = tine.merge({}, dict.properties);
@@ -35,6 +38,7 @@
     this._displaySymbol = null;
     this._displayShadow = null;
   };
+
   var p = createjs.extend(Block, createjs.Container);
   
   /**
@@ -62,6 +66,7 @@
     var name = this.name;
     var category = this.category.toLowerCase();
     var shape = b3e.draw.SHAPES[category];
+    
     var symbol = b3e.draw.SYMBOLS[name] || b3e.draw.textSymbol;
 
     this._width = this._settings.get('block_'+category+'_width');
@@ -285,7 +290,10 @@
         return match;
     });
   };
-
+  
+ p.getDescription = function(){
+   return this.description;
+ };
   /**
    * Runs a traversal over the subtree which this block is root.
    *

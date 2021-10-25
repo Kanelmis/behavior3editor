@@ -137,9 +137,9 @@ b3e.editor.DragSystem = function(editor) {
           nodes.push(conns[i]._outBlock.id);
           var title;
           if (/\[.*?\]/.test(conns[i]._outBlock.title)){
-            title = conns[i]._outBlock.title.replace(/\[.*?\]/ , "[" + i + "]");
+            title = conns[i]._outBlock.title.replace(/\[.*?\]/ , "[" + i + "-" + conns[i]._outBlock.id.slice(conns[i]._outBlock.id.length-4) + "]");
           }else{
-            title =   "[" + i + "]  " + conns[i]._outBlock.title;
+            title =  "[" + i + "-" + conns[i]._outBlock.id.slice(conns[i]._outBlock.id.length-4) + "]  " + conns[i]._outBlock.title;
           }
           conns[i]._outBlock.title =title;
           conns[i]._outBlock._redraw();

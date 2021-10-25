@@ -38,6 +38,7 @@
         decorator : [],
         action    : [],
         condition : [],
+        special : [],
       };
 
       var p = $window.editor.project.get();
@@ -56,6 +57,7 @@
       {
         return a.name.toLowerCase().charCodeAt(0) - b.name.toLowerCase().charCodeAt(0);
       });
+      
 
       p.nodes.each(function(node) {
         if (node.category === 'tree' || _serachFilter(node)) return;
@@ -152,6 +154,23 @@
         vm.filter.replace(/(^s*)|(s*$)/g, "").length ==0)
       {
         var reg = new RegExp(vm.filter, "i");
+        var p = $window.editor.project.get();
+        var tree = p.trees.getSelected();
+        tree.selection.deselectAll();
+        tree.blocks.each(function(block){
+          var found = block.title.replace(/\[.*?\]/, block.id.slice(block.id.length-4));
+          var id = found.trim().substring(0,4);
+          if(vm.filter == id){
+            console.log("good luck dude");
+            
+            tree.selection.selectSubtree(block);
+            tree._selectionBox.visible = true;
+            tree._selectionBox._redraw(block.x-block._width/2 , block.y-block._height/2, block.x-block._width/2 + block._width , block.y + block._height/2 );
+            
+          }else{
+            console.log("Hhaa nigger, You searched for a null.");
+          }
+        });
         return _getTitle(node).search(reg) == -1;
       }
       return true;

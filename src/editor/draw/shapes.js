@@ -124,6 +124,34 @@
     return shape;
   };
 
+
+  b3e.draw.specialShape = function(block, settings) {
+    var bounds = block._displaySymbol.getBounds();
+    var _width = 0;
+
+    if (bounds) { _width = bounds.width+20; }
+
+    var w = Math.max(_width, block._width);
+    var h = bounds.height + 20;
+    var anchorOffsetX = settings.get('anchor_offset_x');
+    var shape = block._displayShape;
+    block._width = w;
+    block._height = h;
+
+    var x = 0;
+    var y = 0;
+    if (settings.get('layout') === 'horizontal') {
+      x = w/2+anchorOffsetX;
+    } else {
+      y = h/2+anchorOffsetX;
+    }
+    makeRect(shape, w, h, 15,
+        settings.get('composite_color'),
+        4,
+        "#FB4565"
+    );
+    return shape;
+  };
   b3e.draw.decoratorShape = function(block, settings) {
     var bounds = block._displaySymbol.getBounds();
 
@@ -254,6 +282,7 @@
     'decorator' : b3e.draw.decoratorShape,
     'action'    : b3e.draw.actionShape,
     'condition' : b3e.draw.conditionShape,
+    'special' :b3e.draw.specialShape,
   };
 
 }());

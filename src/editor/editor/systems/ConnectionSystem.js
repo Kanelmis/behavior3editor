@@ -141,7 +141,7 @@ b3e.editor.ConnectionSystem = function(editor) {
         var nodes = [];
         for (var i=0; i<conns.length; i++) {
           nodes.push(conns[i]._outBlock.id);
-          var title = conns[i]._outBlock.title.replace(/\[.*?\]/ , "[" + i + "]");
+          var  title = conns[i]._outBlock.title.replace(/\[.*?\]/ , "[" + i + "-" + conns[i]._outBlock.id.slice(conns[i]._outBlock.id.length-4) + "]");
           conns[i]._outBlock.title =title;
           conns[i]._outBlock._redraw();
         }

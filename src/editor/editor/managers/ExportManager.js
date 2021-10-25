@@ -38,9 +38,15 @@ b3e.editor.ExportManager = function(editor) {
     };
 
     project.trees.each(function(tree) {
-      var d = this.treeToData(tree, true);
-      d.id = tree._id;
-      data.trees.push(d);
+      
+        var d = this.treeToData(tree, true);
+        if (tree._id !== null){
+          d.id = tree._id;
+          data.trees.push(d);
+        }
+        
+      
+     
     }, this);
 
     return data;
@@ -81,7 +87,9 @@ b3e.editor.ExportManager = function(editor) {
       data.custom_nodes = this.nodesToData();
     }
 
-    tree.blocks.each(function(block) {
+   
+      tree.blocks.each(function(block) {
+      if(block.category !== 'special'){
       if (block.category !== 'root') {
         var d ={
           id          : block.id,
@@ -100,9 +108,12 @@ b3e.editor.ExportManager = function(editor) {
           d.child = children[0];
         }
 
+        
         data.nodes[block.id] = d;
       }
-    });
+    }});
+    
+    
 
     return data;
   };

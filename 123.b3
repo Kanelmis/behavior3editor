@@ -1,0 +1,74 @@
+{
+  "name": "123",
+  "description": "",
+  "data": {
+    "version": "0.3.0",
+    "scope": "project",
+    "selectedTree": "e5c7811b-e154-42d6-854c-c5a52bca3f25",
+    "trees": [
+      {
+        "version": "0.3.0",
+        "scope": "tree",
+        "id": "e5c7811b-e154-42d6-854c-c5a52bca3f25",
+        "title": " [0-8e1a]  A behavior tree",
+        "description": "",
+        "root": "55dc223e-e9f9-4d9b-b530-8ce0434c9b7d",
+        "properties": {},
+        "nodes": {
+          "55dc223e-e9f9-4d9b-b530-8ce0434c9b7d": {
+            "id": "55dc223e-e9f9-4d9b-b530-8ce0434c9b7d",
+            "name": "Sequence",
+            "category": "composite",
+            "title": " [0-9b7d]  Sequence",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": -48,
+              "y": -48
+            },
+            "children": [
+              "44b4a02e-d671-4d13-8a3e-16e4c4d35bb5"
+            ]
+          },
+          "44b4a02e-d671-4d13-8a3e-16e4c4d35bb5": {
+            "id": "44b4a02e-d671-4d13-8a3e-16e4c4d35bb5",
+            "name": "Priority",
+            "category": "composite",
+            "title": " [0-5bb5]  Priority",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 0,
+              "y": 72
+            },
+            "children": [
+              "6a8fe242-36ad-43e3-908f-7d2e88b9a17b"
+            ]
+          },
+          "6a8fe242-36ad-43e3-908f-7d2e88b9a17b": {
+            "id": "6a8fe242-36ad-43e3-908f-7d2e88b9a17b",
+            "name": "Sequence",
+            "category": "composite",
+            "title": " [0-a17b]  Sequence",
+            "description": "",
+            "properties": {},
+            "display": {
+              "x": 156,
+              "y": 228
+            },
+            "children": []
+          }
+        },
+        "display": {
+          "camera_x": 492,
+          "camera_y": 380.5,
+          "camera_z": 1,
+          "x": -204,
+          "y": 24
+        }
+      }
+    ],
+    "custom_nodes": []
+  },
+  "path": "C:\\behavior3editor\\123.b3"
+}
